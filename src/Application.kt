@@ -84,8 +84,8 @@ fun main() {
                         response.toString()
                     }
                 } else {
-                    val result = BCrypt.checkpw(user.password, entry[password])
-                    if (result) {
+                    val correct = BCrypt.checkpw(user.password, entry[password])
+                    if (correct) {
                         call.respondText(ContentType.Application.Json) {
                             val response = JsonObject()
                             response.addProperty("ok", true)
